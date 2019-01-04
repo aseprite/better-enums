@@ -913,7 +913,7 @@ operator >>(std::basic_istream<Char, Traits>& stream, Enum &value)             \
                                                                                \
     stream >> buffer;                                                          \
     ::better_enums::optional<Enum>      converted =                            \
-        Enum::_from_string_nothrow(buffer.c_str());                            \
+        Enum::_from_string_nocase_nothrow(buffer.c_str());                     \
                                                                                \
     if (converted)                                                             \
         value = *converted;                                                    \
